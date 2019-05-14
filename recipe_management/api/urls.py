@@ -12,7 +12,5 @@ router.register(r'ingredient', views.IngredientViewSet)
 router.register(r'recipes', views.RecipeViewSet)
 
 urlpatterns = [
-    path(r'api-auth/', include('rest_framework.urls')),
-    
     path(r'', include(router.urls)),
 ]
