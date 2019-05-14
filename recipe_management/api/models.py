@@ -5,12 +5,12 @@ from django.contrib.auth.models import User
 
 class Step(models.Model):
     step_text = models.CharField(max_length=80)
-    recipe = models.ForeignKey('Recipe', on_delete=models.CASCADE)
+    recipe = models.ForeignKey('Recipe', on_delete=models.SET_NULL, null=True, blank=True)
 
 
 class Ingredient(models.Model):
     text = models.CharField(max_length=30)
-    recipe = models.ForeignKey('Recipe', on_delete=models.CASCADE)
+    recipe = models.ForeignKey('Recipe', on_delete=models.SET_NULL, null=True, blank=True)
     
     class Meta:
         constraints = [
@@ -21,4 +21,4 @@ class Ingredient(models.Model):
 
 class Recipe(models.Model):
     name = models.CharField(max_length=30)
-    user = models.OneToOneField(User, on_delete=models.CASCADE)
+    user = models.OneToOneField(User, on_delete=models.SET_NULL, null=True, blank=True)

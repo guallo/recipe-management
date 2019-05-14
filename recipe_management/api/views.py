@@ -1,5 +1,6 @@
 from django.contrib.auth.models import User
 
+from rest_framework import generics
 from rest_framework import viewsets
 
 from recipe_management.api.models import Step, Ingredient, Recipe
@@ -7,7 +8,7 @@ from recipe_management.api.serializers import UserSerializer, StepSerializer, \
     IngredientSerializer, RecipeSerializer
 
 
-class UserViewSet(viewsets.ModelViewSet):
+class UserViewSet(viewsets.ReadOnlyModelViewSet):
     queryset = User.objects.all()
     serializer_class = UserSerializer
 
