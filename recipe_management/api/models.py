@@ -2,8 +2,6 @@ from django.db import models
 from django.db.models import constraints
 from django.contrib.auth.models import User
 
-# Create your models here.
-
 
 class Step(models.Model):
     step_text = models.CharField(max_length=80)
