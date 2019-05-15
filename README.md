@@ -1,5 +1,5 @@
 <style type="text/css">
-    ol {
+    ol ol {
         list-style-type: decimal !important;
     }
 </style>
