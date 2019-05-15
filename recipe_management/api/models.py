@@ -2,6 +2,8 @@ from django.db import models
 from django.db.models import constraints
 from django.contrib.auth.models import User
 
+from recipe_management.api import validators as custom_validators
+
 
 class Step(models.Model):
     step_text = models.CharField(max_length=80)
@@ -9,7 +11,9 @@ class Step(models.Model):
 
 
 class Ingredient(models.Model):
-    text = models.CharField(max_length=30)
+    text = models.CharField(max_length=30, validators=[
+        custom_validators.validate_slug_with_spaces, 
+    ])
     recipe = models.ForeignKey('Recipe', on_delete=models.SET_NULL, null=True, blank=True)
     
     class Meta:
