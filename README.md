@@ -1,9 +1,3 @@
-<style type="text/css">
-    ol ol {
-        list-style-type: decimal !important;
-    }
-</style>
-
 # recipe-management
 
 ## Download, setup and deploy the project
