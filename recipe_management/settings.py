@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'rest_framework',
     'django_filters',
     
+    'recipe_management.core',
     'recipe_management.api',
 ]
 

@@ -2,7 +2,7 @@ from rest_framework import serializers
 
 from django.contrib.auth.models import User
 
-from recipe_management.api.models import Step, Ingredient, Recipe
+from recipe_management.core.models import Step, Ingredient, Recipe
 
 
 class UserSerializer(serializers.HyperlinkedModelSerializer):
